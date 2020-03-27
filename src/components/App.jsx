@@ -8,7 +8,7 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Slider coverage="75" />
+                <Slider coverage="100" />
             </React.Fragment>
         );
     }
