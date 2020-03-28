@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap");
+$white: #ffffff;
+$black: #000000;
+
+$parentFont: "Quicksand", sans-serif;
+$parentFontSize: 14px;
+
+$highlightTextBg: rgba(0, 0, 0, 0.9);
+$arrowColor: $white;
+$arrowBlockBg: rgba(0, 0, 0, 0.5);
+$arrowBlockBgHover: rgba(0, 0, 0, 0.85);
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: $parentFont;
+    font-size: $parentFontSize;
+    color: $black;
+}
+.fullWidth {
+    float: left;
+    width: 100%;
+}
+.fullScreenHeight {
+    height: 100vh;
+}
+.fullHeight {
+    height: 100%;
+}
+.relativePositioned {
+    position: relative;
+}
+.horizontalSlide {
+    transition: left 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+.paginationGradient {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+.sliderContainer {
+    @extend .fullWidth;
+    max-width: 100%;
+    overflow: hidden;
+    .sliderContainerBlock {
+        float: left;
+        @extend .relativePositioned, .fullWidth, .fullHeight;
+        .sliderItem {
+            @extend .fullWidth;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            .sliderImage {
+                @extend .fullWidth;
+                background-repeat: no-repeat;
+            }
+            .sliderText {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .sliderTextBlock {
+                    max-width: 1024px;
+                    width: 80%;
+                    line-height: 45px;
+                    p {
+                        font-size: 1.5em;
+                    }
+                    h1 {
+                        font-size: 1.25em;
+                        font-weight: 500;
+                        span {
+                            position: relative;
+                            padding: 5px 25px;
+                            &:before,
+                            &:after {
+                                position: absolute;
+                                right: 10px;
+                                width: 6px;
+                                height: 6px;
+                                background-color: $arrowColor;
+                                border-radius: 50%;
+                                content: "";
+                                top: calc(50% - 3px);
+                            }
+                            &::before {
+                                left: 10px;
+                            }
+                        }
+                    }
+                    span {
+                        padding: 5px 15px;
+                        position: relative;
+                        &.bgColor {
+                            background-color: $highlightTextBg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.sliderPagination {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 20px 0px 10px 0px;
+    ul {
+        @extend .fullWidth;
+        text-align: center;
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0px 5px;
+            a {
+                display: block;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                text-decoration: none;
+                &.active {
+                    background: $white;
+                }
+            }
+        }
+    }
+}
+.sliderArrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0px 2.5%;
+    ul {
+        @extend .fullWidth;
+        li {
+            float: left;
+            width: 15px;
+            list-style: none;
+            &:last-child {
+                float: right;
+                transform: rotate(180deg);
+            }
+            a {
+                display: block;
+                width: 30px;
+                position: relative;
+                text-decoration: none;
+                line-height: 45px;
+                border-radius: 5px;
+                background: $arrowBlockBg;
+                &:hover,
+                &:focus {
+                    background: $arrowBlockBgHover;
+                }
+                &:after,
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 10px;
+                    background: $white;
+                    height: 2px;
+                    left: 10px;
+                    top: 25px;
+                    transform: rotate(45deg);
+                }
+                &:after {
+                    transform: rotate(-45deg);
+                    top: 19px;
+                }
+            }
+        }
+    }
+}

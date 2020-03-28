@@ -1,0 +1,36 @@
+{
+    "settings": {
+        "showPagination": true,
+        "showRoundedPageIcons": true,
+        "showBarPaginationIcons": false,
+        "showArrows": true,
+        "descriptionTextAlignment": "center",
+        "scrolling": "vertical"
+    },
+    "images": [
+        {
+            "id": 1,
+            "imageUrl": "https://wallpaperaccess.com/full/36309.jpg",
+            "imageHeading": "Thomas Jefferson",
+            "imageDescription": "Nothing can stop the man with the right mental attitude from achieving his goal; nothing on earth can help the man with the wrong mental attitude."
+        },
+        {
+            "id": 2,
+            "imageUrl": "https://wallpaperaccess.com/full/36310.jpg",
+            "imageHeading": "Carlos Castaneda",
+            "imageDescription": "Happiness is an attitude. We either make ourselves miserable, or happy and strong. The amount of work is the same."
+        },
+        {
+            "id": 3,
+            "imageUrl": "https://wallpaperaccess.com/full/36312.jpg",
+            "imageHeading": "J.K.Rowling",
+            "imageDescription": "Happiness can be found even in the darkest of times, if one only remembers to turn on the light."
+        },
+        {
+            "id": 4,
+            "imageUrl": "https://wallpaperaccess.com/full/36313.jpg",
+            "imageHeading": "George Sand",
+            "imageDescription": "There is only one happiness in this life, to love and be loved."
+        }
+    ]
+}
